@@ -42,8 +42,9 @@
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.4;
-  padding-inline: 16px; padding-block: 20px 110px; }
+  margin: 0; padding-inline: 16px; padding-block: 20px 110px; }
 main { max-width: 760px; margin-inline: auto; display: flex; flex-direction: column; gap: 20px; }
 header { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 h1 { font-family: var(--font-display); font-weight: 800; font-size: 2.4rem; line-height: 1; margin: 0; letter-spacing: -0.02em; }
@@ -117,7 +118,6 @@ details.players summary { cursor: pointer; font-family: var(--font-display); fon
 </head>
 <body>
 
-
 <main>
   <noscript><p style="padding:12px;border:1px solid #c63a2f;border-radius:10px">Cette page a besoin de JavaScript. Ouvrez-la dans Safari, Chrome ou Firefox, pas dans un aperçu de fichier.</p></noscript>
   <header>
@@ -171,8 +171,8 @@ details.players summary { cursor: pointer; font-family: var(--font-display); fon
 
 <script>
 (function () {
-  var DEFAULTS = ["Annie", "Patou", "Sissou", "Marie", "Maha", "Yoann"];
-  var TARGET = 200, BONUS = 35, MAXP = 8, KEY = "flip7-scores-v2", THEME_KEY = "flip7-theme";
+  var DEFAULTS = ["Annie", "Patou"];
+  var TARGET = 200, BONUS = 35, MAXP = 8, KEY = "flip7-scores-v3", THEME_KEY = "flip7-theme";
   var players = [], rounds = [], inputs = {}, flips = {}, nextId = 1, pendingRemove = null;
 
   function defaultPlayers() {
